@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ShopController@index');
+
+Route::get('/serch', 'ShopController@serch');
