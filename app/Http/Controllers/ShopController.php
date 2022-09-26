@@ -18,11 +18,24 @@ class ShopController extends Controller
         
          if($keyword_money) {
              $query = Shop::query();
-             $total = $query->where('money','<=', $keyword_money);
-             $shops = ($total)->get() ;
+             $shops = $query->where('money','<=', $keyword_money)->get();
+             if($shops->count() >= 3) {
+                 $shops = $shops->random(3);
+             }else{
+                 $shops = null;
+             }
+            
+            $sho = ($shops)->toArray();
+            $shops_total = array_sum(array_column($sho, 'money'));
+            
+            
+             
+             
+             
              $message = $keyword_money."円以下の検索が完了しました。";
              return view('/serch')->with([
                  'shops' => $shops,
+                 'total' => $shops_total,
                  'message' => $message,
                  ]);
          }

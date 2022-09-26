@@ -25,6 +25,7 @@
               <td>{{$shop->name}}</td><td>{{$shop->money}}</td><td>{{$shop->time}}</td>
             </tr>
           @endforeach
+          <h1>合計{{ $total }}円です</h1>
         @endif
         @if(!empty($message))
         <div class="alert alert-primary" role="alert">{{ $message}}</div>
