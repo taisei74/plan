@@ -14,3 +14,5 @@
 Route::get('/', 'ShopController@index');
 
 Route::get('/serch', 'ShopController@serch');
+Route::get('/create', 'ShopController@create');
+Route::get('/create', 'ShopController@store');

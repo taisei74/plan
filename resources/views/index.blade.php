@@ -22,6 +22,7 @@
          
          <button type="submit" class="btn btn-primary col-md-5">検索</button>
          </form>
+         <h2><a href='/create'>登録画面</a></h2>
      
     </div>
     </body>

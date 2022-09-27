@@ -7,6 +7,23 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
+    
+     public function create()
+            {
+                return view('create');
+            }
+            public function store(Request $request,Shop $shop)
+            {
+                $input = $request['shop'];
+                
+                $shop->fill($input)->save();
+                
+         
+                
+                return redirect('/crete');
+                
+            }
+            
     public function index()
     {
         return view('index');
@@ -56,5 +73,6 @@ class ShopController extends Controller
         //      return view('/serch')->with(['message' => $message]);
         //  }
     }
-}
+        }
+         
 }
