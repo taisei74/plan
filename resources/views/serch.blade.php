@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')　　　　　　　　　　　　　　　　　　
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-       
-    </head>
+@section('content')
     <body>
     <div>
      <div style="margin-top:50px;">
@@ -22,7 +12,7 @@
           </tr>
           @foreach($shops as $shop)
             <tr>
-              <td>{{$shop->name}}</td><td>{{$shop->money}}</td><td>{{$shop->time}}</td>
+              <td>{{$shop->name}}</td><td>{{$shop->money}}円</td>
             </tr>
           @endforeach
           <h1>合計{{ $total }}円です</h1>
@@ -31,6 +21,6 @@
         <div class="alert alert-primary" role="alert">{{ $message}}</div>
         @endif
         </div>
-      <a href='/'>back</a>
+      <h4>[<a href='/'>ホームに戻る</a>]</h4>
     </body>
-</html>
+@endsection

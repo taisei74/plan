@@ -14,5 +14,11 @@
 Route::get('/', 'ShopController@index');
 
 Route::get('/serch', 'ShopController@serch');
-Route::get('/create', 'ShopController@create');
-Route::get('/create', 'ShopController@store');
+Route::get('/serch/all', 'ShopController@serchall');
+Route::get('/serch/create', 'ShopController@create');
+Route::post('/serch/create', 'ShopController@store');
+Route::get('/shop/{shop}', 'ShopController@createshow');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -12,22 +12,26 @@ class ShopController extends Controller
             {
                 return view('create');
             }
-            public function store(Request $request,Shop $shop)
+            
+            public function store(Shop $shop,Request $request)
             {
-                $input = $request['shop'];
-                
-                $shop->fill($input)->save();
-                
-         
-                
-                return redirect('/crete');
-                
+               $input = $request['shop'];
+               $shop->fill($input)->save();
+                return redirect('/shop/' . $shop->id);
+            }
+            
+            
+            public function createshow(Shop $shop)
+            {
+                return view('createshow')->with(['shop' => $shop]);
             }
             
     public function index()
     {
         return view('index');
     }
+    
+    
     public function serch(Request $request)
     {
         $keyword_money = $request->money;
@@ -73,6 +77,5 @@ class ShopController extends Controller
         //      return view('/serch')->with(['message' => $message]);
         //  }
     }
-        }
-         
+    }
 }
