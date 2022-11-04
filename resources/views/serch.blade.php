@@ -12,25 +12,7 @@
        
     </head>
     <body>
-    <div>
-     <div style="margin-top:50px;">
-        <h1>検索結果</h1>
-        @if(isset($shops))
-        <table class="table">
-          <tr>
-            <th>店名</th><th>金額</th><th>時間</th>
-          </tr>
-          @foreach($shops as $shop)
-            <tr>
-              <td>{{$shop->name}}</td><td>{{$shop->money}}</td><td>{{$shop->time}}</td>
-            </tr>
-          @endforeach
-          <h1>合計{{ $total }}円です</h1>
-        @endif
-        @if(!empty($message))
-        <div class="alert alert-primary" role="alert">{{ $message}}</div>
-        @endif
-        </div>
-      <a href='/'>back</a>
+  
+    
     </body>
 </html>
